@@ -29,9 +29,15 @@ Repeat the above steps to create additional VMs if you need a distributed setup.
 
 ```bash
 sudo apt-get update
+sudo apt-get net-tools
+ifconfig
+    - Note: This is used to get the VMs IP (not the same IP used to ssh into VM)
+    - Note: IP will be under eht0, first line, named inet6 
 sudo apt-get install -y python3-pip
 pip3 install torch torchvision
 ```
+
+
 
 ### 4. Download Dataset
 
