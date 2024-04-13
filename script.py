@@ -74,7 +74,7 @@ def train(rank, size):
 
     # Saves the training model to 'trained_model.pth'
     if rank == 0:  # Save only from one process to avoid multiple saves
-        torch.save(model.state_dict(), 'trained_model.pth')
+        torch.save(model.module.state_dict(), 'trained_model.pth')
 
 if __name__ == '__main__':
     # Set up multiprocessing
