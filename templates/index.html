@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>What is the Food Item?</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1>What is the Food Item?</h1>
+        </div>
+        <div class="row">
+            <p>This is a simple image classifer of Food. </p>
+        </div>
+        <div class="row">
+            <p>Built with PyTorch using a trained model and dataset. Just upload an image from your computer and
+                it will be classified.
+            </p>
+
+        </div>
+        <div class="row">
+            <h2>Uploader</h2>
+        </div>
+        <div class="row">
+            <img id="uploadedImg">
+        </div>
+
+        <div class="row">
+            <form enctype="multipart/form-data" method="POST" name="fileinfo">
+                <label>Upload your image:</label>
+                <input type="file" name="file" required />
+                <input type="submit" value="Classify!" />
+            </form>
+    
+        </div>
+        <div class="row">
+   
+            <h2>Results</h2>
+            <div id="loader" class="lds-dual-ring"></div>
+        </div>
+        <div id="results" class="grid-container">
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <p>
+            <a class="github-button" href="https://github.com/vert01" data-show-count="true"
+                aria-label="Follow @vert01 on GitHub">Follow @vert01</a>
+
+            <a class="github-button" href="https://github.com/vert01/ChurrosSamosaClassifier"
+                data-show-count="true" data-icon="octicon-star"
+                aria-label="Star vert01/ChurrosSamosaClassifier on GitHub">Star</a>
+        </p>
+
+    </footer>
+
+    <script src="../static/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
