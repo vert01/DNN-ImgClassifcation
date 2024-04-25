@@ -72,6 +72,8 @@ torchrun --nproc_per_node=2 --nnodes=2 --node_rank=0 --rdzv_id=123 --rdzv_backen
 - node_rank specifies the rank of the current node (one VM would have 0 and the other 1)
 - rdzv_id is the ID of the rendezvous for coordination
 - rdzv_endpoint should contain the IP address and port of the master node where the rdzv service is taken place
+    - The IP address is found on the Azure portal under the VM's overview -> Networking -> Private IP address
+    - The port an avaiable port
 - multiVM_model.py is the distributive training script we are running
 - anything after the script are agruments taken in by the script (for us it is the number of epochs that the training script will run)
 
