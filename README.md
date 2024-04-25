@@ -64,8 +64,23 @@ git clone https://github.com/your-username/your-repo.git
 - Navigate to the project directory on each VM and run the training script:
 
 ```bash
-python3 script.py
+torchrun --nproc_per_node=2 --nnodes=2 --node_rank=0 --rdzv_id=123 --rdzv_backend=c10d --rdzv_endpoint=IP_ADDR_MASTER_NODE:MASTER_PORT multiVM_model.py NUM_OF_EPOCHS
 ```
+- torchrun is used to run a distributed training script
+- nproc_per_node is the number of processes per node (in this case 2 CPUs per VM)
+- nnodes is the number of nodeds (in this case it's 2 VMs)
+- node_rank specifies the rank of the current node (one VM would have 0 and the other 1)
+- rdzv_id is the ID of the rendezvous for coordination
+- rdzv_endpoint should contain the IP address and port of the master node where the rdzv service is taken place
+- multiVM_model.py is the distributive training script we are running
+- anything after the script are agruments taken in by the script (for us it is the number of epochs that the training script will run)
+
 - Changes can be made to the script using VIM or through the repo directly
+
+### 7. Run the Testing Script
+```bash
+python3 model.py
+```
+- This script will calculate the accuracy of the trained model
 
 
